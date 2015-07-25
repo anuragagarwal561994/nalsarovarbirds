@@ -121,12 +121,15 @@ body {
         position: relative;
         overflow: auto;
         padding: 1.5rem 2rem;
+        .vendor(transition, opacity 0.3s);
       }
+    }
+    #footer {
+      margin-top: 10px;
     }
     #trigger-content {
       position: absolute;
       right: -30px;
-      top: 664px;
       cursor: pointer;
     }
     h1#title {
@@ -139,6 +142,10 @@ body {
 
 .hide {
   display: none;
+}
+
+.transparent {
+  opacity: 0 !important;
 }
 
 .right {
