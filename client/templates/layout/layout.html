@@ -1,4 +1,27 @@
 <template name="ApplicationLayout">
-	<div class="container">
+    <div class="container" id="main-contianer">
+        <div class="slideshow">
+            {{#for from=1 to=4 incr=1}}
+                <img src="/images/backgrounds/{{value}}.jpg">
+            {{/for}}
+        </div>
+        <div id="page">
+            <div id="left-panel" class="panels">
+                <h1 id="title">Nalsarovar</h1>
+                <map id="controlImageMap" name="controlImageMap">
+                    <area shape="rect" alt="" title="" coords="36,1,107,39" href="" target=""/>
+                    <area shape="rect" alt="" title="" coords="1,29,35,96" href="" target=""/>
+                    <area shape="rect" alt="" title="" coords="101,40,136,108" href="" target=""/>
+                    <area shape="rect" alt="" title="" coords="26,97,101,138" href="" target=""/>
+                </map>
+                <img src="/images/controls/nav-control.png" usemap="controlImageMap" id="nav-control">
+            </div>
+            <div id="right-panel" class="panels">
+                <div id="content">
+                    {{> yield "content"}}
+                </div>
+                <img src="/images/controls/speech-bubble.png" id="trigger-content">
+            </div>
+        </div>
 	</div>
 </template>
