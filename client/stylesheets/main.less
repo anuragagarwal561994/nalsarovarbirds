@@ -1,33 +1,5 @@
+@import "helpers.less";
 @secondary-color: #C1272D;
-
-.vendor(@property, @value) {
-  -webkit-@{property}: @value;
-  -moz-@{property}: @value;
-  -o-@{property}: @value;
-  @{property}: @value;
-  -khtml-@{property}: @value;
-}
-
-.keyframes (@name, @frames) {
-  @-webkit-keyframes @name {
-    @frames();
-  }
-  @-moz-keyframes @name {
-    @frames();
-  }
-  @-ms-keyframes @name {
-    @frames();
-  }
-  @-o-keyframes @name {
-    @frames();
-  }
-  @-khtml-keyframes @name {
-    @frames();
-  }
-  @keyframes @name {
-    @frames();
-  }
-}
 
 @font-face {
   font-family: 'Roboto';
