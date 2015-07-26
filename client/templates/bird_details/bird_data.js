@@ -32,7 +32,7 @@ birds = [
              Orange-yellow legs<br>\
              Black horizontal bars on head<br>\
              Pale gray Plumage<br>\
-             Body Length 68-78 cm'
+             Body Length 68-78 cm<br><br>'
     },
     {
         name: 'Greylag Goose',
@@ -63,7 +63,7 @@ birds = [
              greyish-brown bird<br>\
              with a darker head<br>\
              paler belly with variable black spots<br>\
-             white line bordering its upper flanks'
+             white line bordering its upper flanks<br><br>'
     },
     {
         name: 'Tufted Duck',
@@ -85,7 +85,7 @@ birds = [
         migration_facts: '<p>In winter, tufted ducks can be found as far south as the Mediterranean Sea, Saudi Arabia, the Persian Gulf, southern India, Thailand and the Philippines. In North America, the tufted duck is a regular visitor to western Alaska and a rare visitor along the east coast south to Maryland and the west coast to southern California.</p>',
         identification_features: 'White bill with black tip<br>\
              Drakes have glossy black plumage on their head, breast and back<br>\
-             The side and belly have a conspicuous white band'
+             The side and belly have a conspicuous white band<br><br>'
     },
     {
         name: 'Common Teal',
@@ -108,7 +108,7 @@ birds = [
         identification_features: 'Dark green patch before the eye and arcs to the upper hind neck.<br>\
              Head and upper neck is chestnut<br>\
              Patch is bordered with thin yellowish-white lines<br>\
-             Breast is buff with small round brown spots'
+             Breast is buff with small round brown spots<br><br>'
     },
     {
         name: 'Comb Duck',
@@ -133,7 +133,7 @@ birds = [
 			 <p>It is the only known species of the genus Sarkidiornis. The supposed extinct "Mauritian comb duck" is based on misidentified remains of the Mauritian shelduck (Alopochen mauritianus); this was realized as early as 1897, but the mistaken identity can still occasionally be found in recent sources.</p>',
         identification_features: 'Large, fleshy, dark grey growth or ‘comb’ on the top of the male’s black beak<br>\
              glossy blue-black or green-black upperparts, tail and wings<br>\
-             white underparts and pale grey or black flanks'
+             white underparts and pale grey or black flanks<br><br>'
     },
     {
         name: 'Little Grebe',
@@ -158,7 +158,7 @@ birds = [
         migration_facts: '<p>No Data Available</p>',
         identification_features: 'Black bill with small white tip<br>\
              Bright yellow gape<br>\
-             Predominant dark, rufours colour neck, cheeks and flanks'
+             Predominant dark, rufours colour neck, cheeks and flanks<br><br>'
     },
     {
         name: 'Black Necked Grebe',
@@ -186,7 +186,7 @@ birds = [
              Deep red eyes<br>\
              golden ear tufts<br>\
              black head and neck<br>\
-             Brown puffed back wings'
+             Brown puffed back wings<br><br>'
     }
 ];
 
