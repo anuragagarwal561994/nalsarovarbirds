@@ -1,0 +1,14 @@
+<template name="Menu">
+    <style>
+        #content{
+            background-color: transparent !important;
+            opacity: 0.9 !important;
+        }
+    </style>
+    {{#each menuItems}}
+        <div class="button menu-items">{{this}}</div>
+    {{/each}}
+    {{#if hasParent}}
+        <div class="button menu-items" id="back-button">Back</div>
+    {{/if}}
+</template>
