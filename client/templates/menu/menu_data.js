@@ -7,16 +7,10 @@ menus = {
         return birdLink;
     }(),
     'Family Classification': {
-        'List of Birds Families': '',
-        'Grebes Podicipedidae': '',
-        'Whistling ducks, Swans, Geese, and Ducks Anatidae': {
-            'List of Birds': '',
-            'Bar Headed Goose': '',
-            'Lesser Whistining Duck': ''
-        }
+        'Grebes Podicipedidae': '/family?name=grebes_podicipedidae',
+        'Whistling ducks, Swans, Geese, and Ducks Anatidae': '/family?name=whistling_ducks_swans_geese_and_ducks_anatidae'
     },
     'List of Indian State Birds': {
-        'List of Indian States': '',
         'Gujarat': '',
         'Uttar Pradesh': ''
     }
