@@ -3,7 +3,7 @@ Template.BirdFamily.rendered = function(){
     if(familyToJump){
         $("#content").animate({
             scrollTop: $(familyToJump).offset().top
-        }, 'slow', function () {
+        }, 0, function () {
             $("html, body").animate({
                 scrollTop: $(familyToJump).offset().top
             }, 'slow');
