@@ -39,7 +39,7 @@ Template.BirdDetails.helpers({
     }
 });
 Template.BirdDetails.events({
-    'click #information-nav div': function (event, template) {
+    'click #information-nav .button': function (event, template) {
         Session.set('current_information', $(template.find(event.currentTarget)).index())
     },
     'load #magnify': function(event, template){
