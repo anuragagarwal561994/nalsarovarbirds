@@ -1,11 +1,8 @@
 <template name="BirdDetails">
     <div id="information-nav">
-        <div><a>Nomenclature</a></div>
-        <div><a>Habitat</a></div>
-        <div><a>Habits</a></div>
-        <div><a>Identification Features</a></div>
-        <div><a>Migration Facts</a></div>
-        <div><a>Population Status</a></div>
+        {{#each navigationLinks}}
+            <div><a>{{this}}</a></div>
+        {{/each}}
     </div>
     <div id="information">
         {{#with data}}

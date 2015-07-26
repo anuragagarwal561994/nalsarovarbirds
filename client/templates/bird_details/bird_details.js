@@ -1,3 +1,11 @@
+var navigationLinks = [
+    'Nomenclature',
+    'Habitat',
+    'Habits',
+    'Identification Features',
+    'Migration Facts',
+    'Population Status'
+];
 Template.BirdDetails.rendered = function () {
     var self = this;
     Session.set('current_information', 0);
@@ -10,7 +18,7 @@ Template.BirdDetails.rendered = function () {
 Template.BirdDetails.helpers({
     'data': function () {
         var bird = birds[Session.get('current_bird')];
-        var title = $($("#information-nav div")[Session.get('current_information')]).text();
+        var title = navigationLinks[Session.get('current_information')]
         var currentInfromation = title.toLowerCase().replace(' ', '_');
         if (title && bird) {
             return {
@@ -20,6 +28,9 @@ Template.BirdDetails.helpers({
             };
         }
         return null;
+    },
+    'navigationLinks': function(){
+        return navigationLinks;
     }
 });
 Template.BirdDetails.events({
