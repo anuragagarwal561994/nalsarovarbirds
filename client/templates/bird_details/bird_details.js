@@ -6,9 +6,17 @@ var navigationLinks = [
     'Migration Facts',
     'Population Status'
 ];
+Template.BirdDetails.created = function () {
+    var getIndex = function(array, key){
+        return Math.max(_.map(array, function (val) {
+            return val.toLowerCase().replace(/ /g, '_');
+        }).indexOf(key), 0);
+    };
+    Session.set('current_bird', getIndex(_.pluck(birds, 'name'), this.data.bird));
+    Session.set('current_information', getIndex(navigationLinks, this.data.information));
+};
 Template.BirdDetails.rendered = function () {
     var self = this;
-    Session.set('current_information', 0);
     Tracker.autorun(function () {
         var navigationList = $(self.findAll('#information-nav div'));
         navigationList.removeClass('active');
@@ -18,16 +26,13 @@ Template.BirdDetails.rendered = function () {
 Template.BirdDetails.helpers({
     'data': function () {
         var bird = birds[Session.get('current_bird')];
-        var title = navigationLinks[Session.get('current_information')]
-        var currentInfromation = title.toLowerCase().replace(' ', '_');
-        if (title && bird) {
-            return {
-                title: title,
-                info: new Handlebars.SafeString(bird[currentInfromation]),
-                name: bird.name
-            };
-        }
-        return null;
+        var title = navigationLinks[Session.get('current_information')];
+        var currentInfromation = title.toLowerCase().replace(/ /g, '_');
+        return {
+            title: title,
+            info: new Handlebars.SafeString(bird[currentInfromation]),
+            name: bird.name
+        };
     },
     'navigationLinks': function(){
         return navigationLinks;

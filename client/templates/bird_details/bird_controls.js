@@ -1,7 +1,6 @@
 Template.BirdsControl.rendered = function () {
     var bird_control = $(this.find('.enlarge'));
     var self = this;
-    Session.set('current_bird', 0);
     Tracker.autorun(function () {
         var enlargeList = $(self.findAll('.enlarge li')),
             birdIndex = Session.get('current_bird');
