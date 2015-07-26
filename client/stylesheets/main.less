@@ -79,8 +79,10 @@ h1,h2,h3,h4,h5,h6{
     left: 0;
     right: 0;
     top: 0;
-    z-index: 1;
     padding-top: 62px;
+    #nav-control{
+      margin-left: -40px;
+    }
     .panels {
       display: inline-block;
       width: 478px;
@@ -97,17 +99,23 @@ h1,h2,h3,h4,h5,h6{
         padding: 1.5rem 2rem;
         .vendor(transition, opacity 0.3s);
       }
+      #right-footer{
+        margin-top: 10px;
+        text-align: right;
+        *{
+          cursor: pointer;
+          margin: 0px 5px;
+        }
+      }
+      #trigger-content {
+        margin-right: -33px;
+      }
     }
     #footer {
       margin-top: 10px;
     }
-    #trigger-content {
-      position: absolute;
-      right: -30px;
-      cursor: pointer;
-    }
     h1#title {
-      margin-top: 20px;
+      margin-left: -40px;
       font-size: 6.5rem;
       margin-bottom: 184px;
     }
@@ -125,3 +133,10 @@ h1,h2,h3,h4,h5,h6{
 .right {
   float: right;
 }
+
+.left {
+  float: left;
+}
+
+//TODO: bring the heading to the line of the box
+//TODO: bring all in the same line from the left

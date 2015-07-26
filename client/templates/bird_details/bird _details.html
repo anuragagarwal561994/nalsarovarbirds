@@ -1,0 +1,38 @@
+<template name="BirdDetails">
+    <div id="information-nav">
+        <div><a>Nomenclature</a></div>
+        <div><a>Habitat</a></div>
+        <div><a>Habits</a></div>
+        <div><a>Identification Features</a></div>
+        <div><a>Migration Facts</a></div>
+        <div><a>Population Status</a></div>
+    </div>
+    <div id="information">
+        {{#with data}}
+            <h2>{{name}}</h2>
+
+            <h4>{{title}}</h4>
+
+            {{info}}
+        {{/with}}
+    </div>
+</template>
+
+<template name="BirdsControl">
+    <ul class="enlarge">
+        {{#each birds}}
+            <li>
+                <img src="{{image}}" width="70px"/>
+                <span>
+                    <img src="{{image}}" width="100px"/>
+                </span>
+            </li>
+        {{/each}}
+    </ul>
+</template>
+
+<template name="BirdControlFooter">
+    <img src="/images/controls/sound.png" id="sound-trigger" width="40px">
+    <img src="/images/controls/gallery.png" id="gallery-trigger" width="40px">
+    <img src="/images/controls/globe.png" id="map-trigger" width="40px">
+</template>
