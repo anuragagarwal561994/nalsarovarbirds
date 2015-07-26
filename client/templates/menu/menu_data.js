@@ -10,9 +10,6 @@ menus = {
         'Grebes Podicipedidae': '/family?name=grebes_podicipedidae',
         'Whistling ducks, Swans, Geese, and Ducks Anatidae': '/family?name=whistling_ducks_swans_geese_and_ducks_anatidae'
     },
-    'List of Indian State Birds': {
-        'Gujarat': '',
-        'Uttar Pradesh': ''
-    }
+    'List of Indian State Birds': '/statebird'
 };
 
