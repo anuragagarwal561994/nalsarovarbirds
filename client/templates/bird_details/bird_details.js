@@ -37,7 +37,7 @@ Template.BirdDetails.events({
     'click #information-nav div': function (event, template) {
         Session.set('current_information', $(template.find(event.currentTarget)).index())
     },
-    'click #magnify': function(event, template){
+    'load #magnify': function(event, template){
         $(template.find(event.currentTarget)).elevateZoom({
             zoomWindowWidth: 300,
             zoomWindowHeight: 300,
