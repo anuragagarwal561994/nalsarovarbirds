@@ -1,0 +1,24 @@
+<template name="Map">
+    <style>
+        #content{
+            width: 840px !important;
+            left: -395px;
+            text-align: center;
+            top: 90px;
+            height: 534px !important;
+        }
+        #trigger-content{
+            margin-top:35px !important;
+        }
+        ul.enlarge{
+            left: 230px;
+            z-index: 1;
+            bottom: 25px;
+        }
+    </style>
+    <div id="map">
+        <img src="/images/map-images/world-map.png">
+        <img src="/images/map-images/{{current_bird}}.png" id="migration-path">
+    </div>
+    {{> contentFor region="footer" template="BirdsControl"}}
+</template>
