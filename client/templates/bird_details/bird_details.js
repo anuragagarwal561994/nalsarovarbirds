@@ -7,6 +7,9 @@ var navigationLinks = [
     'Population Status'
 ];
 Template.BirdDetails.created = function () {
+    $("html, body").animate({
+        scrollTop: 0
+    }, 'slow');
     var getIndex = function(array, key){
         return Math.max(_.map(array, function (val) {
             return val.toLowerCase().replace(/ /g, '_');
