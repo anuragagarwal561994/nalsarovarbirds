@@ -2,7 +2,7 @@ menus = {
     'List of Birds': function () {
         var birdLink = {};
         _.each(birds, function (bird) {
-            birdLink[bird.name] = '/bird-details?bird='+bird.name.toLowerCase().replace(/ /g, '_');
+            birdLink[bird.name] = '/bird-details?bird=' + bird.name.toLowerCase().replace(/ /g, '_');
         });
         return birdLink;
     }(),

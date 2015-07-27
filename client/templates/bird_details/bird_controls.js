@@ -28,6 +28,6 @@ Template.BirdsControl.events({
 });
 Template.BirdControlFooter.events({
     'click #map-trigger': function (event, template) {
-        window.location.href='/map?bird='+birds[Session.get('current_bird')].name.toLowerCase().replace(/ /g, '_');
+        window.location.href = '/map?bird=' + birds[Session.get('current_bird')].name.toLowerCase().replace(/ /g, '_');
     }
 });

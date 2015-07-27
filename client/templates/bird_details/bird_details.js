@@ -10,7 +10,7 @@ Template.BirdDetails.created = function () {
     $("html, body").animate({
         scrollTop: 0
     }, 'slow');
-    var getIndex = function(array, key){
+    var getIndex = function (array, key) {
         return Math.max(_.map(array, function (val) {
             return val.toLowerCase().replace(/ /g, '_');
         }).indexOf(key), 0);
@@ -37,7 +37,7 @@ Template.BirdDetails.helpers({
             name: bird.name
         };
     },
-    'navigationLinks': function(){
+    'navigationLinks': function () {
         return navigationLinks;
     }
 });
@@ -45,7 +45,7 @@ Template.BirdDetails.events({
     'click #information-nav .button': function (event, template) {
         Session.set('current_information', $(template.find(event.currentTarget)).index())
     },
-    'load #magnify': function(event, template){
+    'load #magnify': function (event, template) {
         $(template.find(event.currentTarget)).elevateZoom({
             zoomWindowWidth: 300,
             zoomWindowHeight: 300,

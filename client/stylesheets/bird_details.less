@@ -1,4 +1,5 @@
 @import "helpers.less";
+
 ul.enlarge {
   list-style-type: none;
   position: absolute;
@@ -10,7 +11,7 @@ ul.enlarge {
     position: relative;
     z-index: 0;
     margin: -1px;
-    &:hover{
+    &:hover {
       z-index: 1;
       cursor: pointer;
       span {
@@ -18,7 +19,7 @@ ul.enlarge {
         left: -19px;
       }
     }
-    &.active{
+    &.active {
       border: 3px solid white;
     }
   }
@@ -31,46 +32,49 @@ ul.enlarge {
     .vendor(box-shadow, 0 0 20px rgba(0, 0, 0, .75));
   }
 }
-.navbar{
+
+.navbar {
   height: 100%;
-  ul{
+  ul {
     float: none
   }
-  li{
+  li {
     float: none;
-    a{
+    a {
       padding-top: 12px;
       padding-bottom: 12px;
       cursor: pointer;
     }
   }
 }
-#information{
+
+#information {
   width: 96%;
   margin: 0 auto;
-  h4{
+  h4 {
     color: #333;
   }
-  ul{
+  ul {
     padding-left: 20px;
   }
-  img{
+  img {
     width: 100%;
   }
 }
-#information-nav{
+
+#information-nav {
   text-align: center;
   margin-bottom: 10px;
-  div{
+  div {
     width: 32%;
     display: inline-block;
-    a{
+    a {
       color: @secondary-color;
-      &:hover{
+      &:hover {
         text-decoration: none;
       }
     }
-    &.active{
+    &.active {
       background: #ddd;
     }
   }

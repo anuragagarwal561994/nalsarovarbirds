@@ -5,18 +5,18 @@ Template.Menu.created = function () {
 };
 Template.Menu.rendered = function () {
     var self = this;
-    Tracker.autorun(function(){
-      dep.depend();
-      $(self.findAll(".menu-items")).each(function (i) {
-          $(this).delay(i*100).fadeTo(100, 1);
-      });
+    Tracker.autorun(function () {
+        dep.depend();
+        $(self.findAll(".menu-items")).each(function (i) {
+            $(this).delay(i * 100).fadeTo(100, 1);
+        });
     })
 };
 Template.Menu.helpers({
     'menuItems': function () {
         currentMenu = menus;
         var parentStack = Session.get('parentStack');
-        for(var i=0,length=parentStack.length;i<length;i++){
+        for (var i = 0, length = parentStack.length; i < length; i++) {
             currentMenu = currentMenu[parentStack[i]];
         }
         Meteor.defer(function () {
@@ -29,11 +29,11 @@ Template.Menu.helpers({
     }
 });
 Template.Menu.events({
-    'click .menu-items:not(#back-button)': function(event, template){
+    'click .menu-items:not(#back-button)': function (event, template) {
         var selected = $(template.find(event.target)).text();
-        if(typeof currentMenu[selected] === 'string')
+        if (typeof currentMenu[selected] === 'string')
             Router.go(currentMenu[selected]);
-        else{
+        else {
             animateFade(template, false, function () {
                 var parentStack = Session.get('parentStack');
                 parentStack.push(selected);
@@ -50,11 +50,11 @@ Template.Menu.events({
     }
 });
 
-var animateFade = function(template, reverse, cb){
+var animateFade = function (template, reverse, cb) {
     var menuItems = template.findAll('.menu-items');
-    if(reverse)
+    if (reverse)
         menuItems.reverse();
     $(menuItems).each(function (i) {
-        $(this).delay(i*100).fadeTo(100, 0);
+        $(this).delay(i * 100).fadeTo(100, 0);
     }).promise().done(cb)
 };
