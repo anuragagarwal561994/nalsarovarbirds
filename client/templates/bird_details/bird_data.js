@@ -192,8 +192,9 @@ birds = [
 
 birds = _.map(birds, function (obj) {
     var imageName = obj.name.toLocaleLowerCase();
-    var url = "/images/identification-features/" + imageName + ".png";
-    obj.identification_features += '<img src="' + url + '" id="magnify" data-zoom-image="' + url + '"/>';
+    var url = "/images/identification-features-small/" + imageName + ".png";
+    obj.identification_features += '<img src="/images/identification-features-small/' + imageName + '.png" ' +
+        'id="magnify" data-zoom-image="/images/identification-features/' + imageName + '.png"/>';
     obj.image = '/images/birds-small/' + imageName + '.jpg';
     obj.gallery = _.map(_.range(1, (obj.gallerCount || 6) + 1), function (i) {
         return {
