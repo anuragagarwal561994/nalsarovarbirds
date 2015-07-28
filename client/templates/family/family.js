@@ -1,6 +1,10 @@
 Template.BirdFamily.rendered = function () {
     var familyToJump = this.find('#' + this.data.name);
-    if (familyToJump) {
+    if(this.data.name == "grebes_podicipedidae")
+        $("#content").animate({
+            scrollTop: 0
+        }, 'slow');
+    else if (familyToJump) {
         $("#content").animate({
             scrollTop: $(familyToJump).offset().top
         }, 0, function () {
