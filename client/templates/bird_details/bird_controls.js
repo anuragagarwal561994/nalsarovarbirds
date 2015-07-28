@@ -7,7 +7,7 @@ Template.BirdsControl.rendered = function () {
         enlargeList.removeClass('active');
         $(enlargeList[birdIndex]).addClass('active');
 
-        $(self.find('#gallery-trigger')).magnificPopup({
+        $('#gallery-trigger').magnificPopup({
             items: birds[birdIndex]['gallery'],
             gallery: {
                 enabled: true
