@@ -51,7 +51,8 @@ Template.BirdDetails.events({
             zoomWindowHeight: 300,
             scrollZoom: true,
             zoomWindowPosition: 9,
-            zoomLevel: 2
+            zoomLevel: 6,
+            minZoomLevel: 3
         });
     }
 });
