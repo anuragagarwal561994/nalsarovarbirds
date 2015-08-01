@@ -6,10 +6,13 @@ menus = {
         });
         return birdLink;
     }(),
-    'Family Classification': {
-        'Grebes Podicipedidae': '/family?name=grebes_podicipedidae',
-        'Whistling ducks, Swans, Geese, and Ducks Anatidae': '/family?name=whistling_ducks_swans_geese_and_ducks_anatidae',
-    },
+    'Family Classification': function (){
+        var familyLink = {};
+        _.each(bird_families, function (family) {
+            familyLink[family.name] = '/family?name=' + family.name.toLowerCase().replace(/,/g, '').replace(/ /g, '_');
+        });
+        return familyLink;
+    }(),
     'List of Indian State Birds': '/statebird'
 };
 
