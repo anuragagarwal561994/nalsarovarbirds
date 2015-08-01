@@ -1,3 +1,5 @@
+@import "helpers.less";
+
 /* Slider */
 .slick-loading .slick-list {
   background: #fff url('/images/ajax-loader.gif') center center no-repeat;
@@ -9,21 +11,23 @@
   font-size: 0;
   line-height: 0;
   position: absolute;
-  top: 63%;
+  bottom: 4px;
   width: 23px;
   display: block;
-  height: 53px;
+  height: 54px;
+  background: #333;
   z-index: 1;
   padding: 0;
   cursor: pointer;
   color: transparent;
   border: none;
   outline: none;
-  background: none;
+  opacity: 0.7;
+  .vendor(transition, opacity 200ms ease);
   &:hover, :focus {
     color: transparent;
     outline: none;
-    background: transparent;
+    opacity: 0.4;
     &:before {
       opacity: 1;
     }
