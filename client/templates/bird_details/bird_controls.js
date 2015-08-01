@@ -2,7 +2,7 @@ Template.BirdsControl.rendered = function () {
     var bird_control = $(this.find('.enlarge'));
     var self = this;
     Tracker.autorun(function () {
-        var enlargeList = $(self.findAll('.enlarge li')),
+        var enlargeList = $(self.findAll('.bird-list div.slick-slide')),
             birdIndex = Session.get('current_bird');
         enlargeList.removeClass('active');
         $(enlargeList[birdIndex]).addClass('active');
@@ -15,6 +15,11 @@ Template.BirdsControl.rendered = function () {
             type: 'image'
         });
     });
+    $(this.find('.bird-list')).slick({
+        slidesToShow: 5,
+        slidesToScroll: 5,
+        infinite: false
+    })
 };
 Template.BirdsControl.helpers({
     'birds': function () {
@@ -22,8 +27,8 @@ Template.BirdsControl.helpers({
     }
 });
 Template.BirdsControl.events({
-    'click .enlarge li': function (event, template) {
-        Session.set('current_bird', $(template.find(event.currentTarget)).index());
+    'click .bird-list div.slick-slide > div': function (event, template) {
+        Session.set('current_bird', $(template.find(event.currentTarget)).parent().data('slickIndex'))
     }
 });
 Template.BirdControlFooter.events({

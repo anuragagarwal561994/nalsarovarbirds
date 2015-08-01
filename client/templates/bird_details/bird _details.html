@@ -18,16 +18,17 @@
 </template>
 
 <template name="BirdsControl">
-    <ul class="enlarge">
+    <div class="bird-list">
         {{#each birds}}
-            <li>
-                <img src="{{image}}" width="70px"/>
-                <span>
-                    <img src="{{image}}" width="100px"/>
-                </span>
-            </li>
+            <div>
+                <div>
+                    <img src="{{image}}">
+                    <div class="overlay"></div>
+                </div>
+                <span><img src="{{image}}"></span>
+            </div>
         {{/each}}
-    </ul>
+    </div>
 </template>
 
 <template name="BirdControlFooter">

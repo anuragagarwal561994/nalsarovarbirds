@@ -1,35 +1,66 @@
 @import "helpers.less";
 
-ul.enlarge {
-  list-style-type: none;
+.bird-list {
+  width: 472px;
   position: absolute;
   bottom: 110px;
-  left: -75px;
-  display: inline-block;
-  li {
-    display: inline-block;
+  left: -35px;
+  .slick-track{
+    height: 145px
+  }
+  .slick-list.draggable{
+    padding: 0 25px;
+  }
+  div.slick-slide {
     position: relative;
-    z-index: 0;
-    margin: -1px;
-    &:hover {
-      z-index: 1;
+    > div{
       cursor: pointer;
-      span {
-        top: -80px;
-        left: -19px;
+      *{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+      }
+      img{
+        .vendor(box-shadow, 0 0 5px rgba(132, 132, 132, .75));
+      }
+      .overlay{
+        height: 53px;
+        background-color: black;
+        opacity: 0.4;
+      }
+      &:hover + span{
+        opacity: 1;
       }
     }
-    &.active {
-      border: 3px solid white;
+    &:not(.slick-active){
+      visibility: hidden;
     }
-  }
-  img {
-    .vendor(box-shadow, 0 0 6px rgba(132, 132, 132, .75));
-  }
-  span {
-    position: absolute;
-    left: -9999px;
-    .vendor(box-shadow, 0 0 20px rgba(0, 0, 0, .75));
+    span{
+      position: absolute;
+      opacity: 0;
+      .vendor(transition, opacity 500ms ease);
+      left: -15px;
+      top: 10px;
+      .vendor(box-shadow, 0 0 20px rgba(0, 0, 0, .75));
+      img{
+        width: 100px;
+      }
+    }
+    margin: 5px;
+    .vendor(transition, all 200ms ease);
+    &.active {
+      .vendor(transform, scale(1.08));
+      img{
+        opacity: 1;
+      }
+      .overlay{
+        opacity: 0;
+      }
+    }
+    &:focus{
+      outline: none;
+    }
   }
 }
 
