@@ -7,8 +7,10 @@ Template.Menu.rendered = function () {
     var self = this;
     Tracker.autorun(function () {
         dep.depend();
+        var menuItems = self.findAll(".menu-items");
+        var timeGap = 300.0/menuItems.length;
         $(self.findAll(".menu-items")).each(function (i) {
-            $(this).delay(i * 100).fadeTo(100, 1);
+            $(this).delay(i * timeGap).fadeTo(timeGap, 1);
         });
     })
 };
@@ -52,9 +54,10 @@ Template.Menu.events({
 
 var animateFade = function (template, reverse, cb) {
     var menuItems = template.findAll('.menu-items');
+    var timeGap = 300.0/menuItems.length;
     if (reverse)
         menuItems.reverse();
     $(menuItems).each(function (i) {
-        $(this).delay(i * 100).fadeTo(100, 0);
+        $(this).delay(i * timeGap).fadeTo(timeGap, 0);
     }).promise().done(cb)
 };
