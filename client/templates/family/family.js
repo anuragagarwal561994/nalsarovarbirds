@@ -19,6 +19,10 @@ Template.BirdFamily.helpers({
     data: function () {
         return _.map(bird_families, function (obj) {
             obj['id'] = obj.name.toLocaleLowerCase().replace(/ /g, '_').replace(/,/g, '');
+            if(obj.hasOwnProperty('bird_details'))
+                obj.bird_details = new Handlebars.SafeString(obj.bird_details);
+            obj.hasBirdDetails = obj.hasOwnProperty('birds') || obj.hasOwnProperty('bird_details');
+            obj.hasFamilyData = obj.hasBirdDetails || obj.hasOwnProperty('characteristics');
             return obj;
         })
     }

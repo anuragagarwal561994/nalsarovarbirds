@@ -1,18 +1,29 @@
 <template name="BirdFamily">
     {{#each data}}
-        <div id="{{id}}" class="bird-family">
-            <h3>{{name}}</h3>
-            <ol type="a">
-                {{#each characteristics}}
-                    <li>{{this}}</li>
-                {{/each}}
-            </ol>
-            <h4>Birds</h4>
-            <ol type="a" class="birds">
-                {{#each birds}}
-                    <li>{{this}}</li>
-                {{/each}}
-            </ol>
-        </div>
+        {{#if hasFamilyData}}
+            <div id="{{id}}" class="bird-family">
+                <h3>{{name}}</h3>
+                {{#if characteristics}}
+                    <ol type="a">
+                        {{#each characteristics}}
+                            <li>{{this}}</li>
+                        {{/each}}
+                    </ol>
+                {{/if}}
+                {{#if hasBirdDetails}}
+                    <h4>Birds</h4>
+                {{/if}}
+                {{#if birds}}
+                    <ol type="a" class="birds">
+                        {{#each birds}}
+                            <li>{{this}}</li>
+                        {{/each}}
+                    </ol>
+                {{/if}}
+                {{#if bird_details}}
+                    {{bird_details}}
+                {{/if}}
+            </div>
+        {{/if}}
     {{/each}}
 </template>
