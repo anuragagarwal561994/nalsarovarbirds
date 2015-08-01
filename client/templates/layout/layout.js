@@ -19,5 +19,8 @@ Template.ApplicationLayout.events({
             content.toggleClass('transparent');
             trigger.src = '/images/controls/' + imageName + '.png';
         }
+    },
+    'error img': function (event, template) {
+        template.find(event.target).remove();
     }
 });
