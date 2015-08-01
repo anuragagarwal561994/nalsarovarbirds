@@ -1,5 +1,10 @@
 Template.BirdsControl.rendered = function () {
     var self = this;
+    $(this.find('.bird-list')).slick({
+        slidesToShow: 5,
+        slidesToScroll: 5,
+        infinite: false
+    });
     Tracker.autorun(function () {
         var birdListElements = $(self.findAll('.bird-list div.slick-slide')),
             birdIndex = Session.get('current_bird');
@@ -14,11 +19,6 @@ Template.BirdsControl.rendered = function () {
             type: 'image'
         });
     });
-    $(this.find('.bird-list')).slick({
-        slidesToShow: 5,
-        slidesToScroll: 5,
-        infinite: false
-    })
 };
 Template.BirdsControl.helpers({
     'birds': function () {
