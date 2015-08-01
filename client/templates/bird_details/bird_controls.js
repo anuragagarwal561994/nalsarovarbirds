@@ -1,11 +1,10 @@
 Template.BirdsControl.rendered = function () {
-    var bird_control = $(this.find('.enlarge'));
     var self = this;
     Tracker.autorun(function () {
-        var enlargeList = $(self.findAll('.bird-list div.slick-slide')),
+        var birdListElements = $(self.findAll('.bird-list div.slick-slide')),
             birdIndex = Session.get('current_bird');
-        enlargeList.removeClass('active');
-        $(enlargeList[birdIndex]).addClass('active');
+        birdListElements.removeClass('active');
+        $(birdListElements[birdIndex]).addClass('active');
 
         $('#gallery-trigger').magnificPopup({
             items: birds[birdIndex]['gallery'],
