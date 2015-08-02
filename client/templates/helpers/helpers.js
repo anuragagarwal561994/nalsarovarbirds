@@ -21,3 +21,16 @@ toArray = function (obj) {
     }
     return returnArray;
 };
+getIndex = function (a, b, c) {
+    if (arguments.length == 3) {
+        return getIndex(a.map(function (obj) {
+            return obj[b];
+        }), c);
+    }
+    else if (arguments.length == 2) {
+        return Math.max(a.map(function (val) {
+            return val.toUnderscoreFormat();
+        }).indexOf(b), 0);
+    }
+    throw "Accepts either 2 or 3 arguments";
+};

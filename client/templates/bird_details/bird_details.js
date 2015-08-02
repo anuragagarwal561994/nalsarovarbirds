@@ -7,12 +7,7 @@ var navigationLinks = [
     'Population Status'
 ];
 Template.BirdDetails.created = function () {
-    var getIndex = function (array, key) {
-        return Math.max(_.map(array, function (val) {
-            return val.toUnderscoreFormat();
-        }).indexOf(key), 0);
-    };
-    Session.set('current_bird', getIndex(_.pluck(birds, 'name'), this.data.bird));
+    Session.set('current_bird', getIndex(birds, 'name', this.data.bird));
     Session.set('current_information', getIndex(navigationLinks, this.data.information));
 };
 Template.BirdDetails.rendered = function () {
