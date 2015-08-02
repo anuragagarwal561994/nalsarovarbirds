@@ -1,6 +1,3 @@
-Template.BirdFamily.created = function () {
-    Session.set('current_family', getIndex(bird_families, 'name', this.data.name, 'current_family'));
-};
 Template.BirdFamily.helpers({
     'family_data' : function () {
         return bird_families[Session.get('current_family')];
@@ -28,9 +25,17 @@ Template.BirdFamily.events({
         })
     },
     'click #next' : function (event, template) {
-        Session.set('current_family', Session.get('current_family') + 1);
+        Router.go('family', {}, {
+            query : {
+                name : bird_families[Session.get('current_family') + 1].name.toUnderscoreFormat()
+            }
+        });
     },
     'click #previous' : function (event, template) {
-        Session.set('current_family', Session.get('current_family') - 1);
+        Router.go('family', {}, {
+            query : {
+                name : bird_families[Session.get('current_family') - 1].name.toUnderscoreFormat()
+            }
+        });
     }
 });
