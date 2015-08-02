@@ -21,6 +21,9 @@ toArray = function (obj) {
     }
     return returnArray;
 };
+String.prototype.cutString = function (limit) {
+    return this.length > limit ? this.slice(0, limit) + '...' : this;
+};
 getIndex = function (a, b, c) {
     if (arguments.length == 3) {
         return getIndex(a.map(function (obj) {
