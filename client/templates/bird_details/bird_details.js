@@ -1,4 +1,4 @@
-var navigationLinks = [
+navigationLinks = [
     'Nomenclature',
     'Habitat',
     'Habits',
@@ -6,16 +6,14 @@ var navigationLinks = [
     'Migration Facts',
     'Population Status'
 ];
-Template.BirdDetails.created = function () {
-    Session.set('current_bird', getIndex(birds, 'name', this.data.bird, 'current_bird'));
-    Session.set('current_information', getIndex(navigationLinks, this.data.information), 'current_information');
-};
 Template.BirdDetails.rendered = function () {
     var self = this;
     Tracker.autorun(function () {
-        var navigationList = $(self.findAll('#information-nav div'));
-        navigationList.removeClass('active');
-        $(navigationList[Session.get('current_information')]).addClass('active');
+        var navigationList = self.findAll('#information-nav div');
+        if(navigationList){
+            $(navigationList).removeClass('active');
+            $($(navigationList)[Session.get('current_information')]).addClass('active');
+        }
     });
 };
 Template.BirdDetails.helpers({
@@ -80,7 +78,12 @@ Template.parasWithPoints.helpers({
 });
 Template.BirdDetails.events({
     'click #information-nav .button' : function (event, template) {
-        Session.set('current_information', $(template.find(event.currentTarget)).index())
+        Router.go('bird-details', {}, {
+            query: {
+                bird: birds[Session.get('current_bird')].name.toUnderscoreFormat(),
+                information: $(event.currentTarget).text().toUnderscoreFormat()
+            }
+        });
     },
     'load #magnify' : function (event, template) {
         var magnifyElement = $(template.find(event.currentTarget));

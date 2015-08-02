@@ -38,7 +38,12 @@ Template.BirdsControl.helpers({
 });
 Template.BirdsControl.events({
     'click .bird-list div.slick-slide > div' : function (event, template) {
-        Session.set('current_bird', $(template.find(event.currentTarget)).parent().data('slickIndex'))
+        Router.go('bird-details', {}, {
+            query: {
+                bird: birds[$(event.currentTarget).parent().data('slickIndex')].name.toUnderscoreFormat(),
+                information: navigationLinks[Session.get('current_information')].toUnderscoreFormat()
+            }
+        });
     }
 });
 Template.BirdControlFooter.helpers({
