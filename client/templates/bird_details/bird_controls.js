@@ -1,10 +1,12 @@
 Template.BirdsControl.rendered = function () {
     var self = this;
-    $(this.find('.bird-list')).slick({
+    var birdList = $(this.find('.bird-list'));
+    birdList.slick({
         slidesToShow : 5,
         slidesToScroll : 5,
         infinite : false
     });
+    birdList.slick('slickGoTo', Session.get('current_bird') - 1);
     Tracker.autorun(function () {
         var birdListElements = $(self.findAll('.bird-list div.slick-slide')),
             birdIndex = Session.get('current_bird');
@@ -42,8 +44,8 @@ Template.BirdsControl.events({
 Template.BirdControlFooter.events({
     'click #map-trigger' : function (event, template) {
         Router.go('map', {}, {
-            query: {
-                bird: birds[Session.get('current_bird')].name.toUnderscoreFormat()
+            query : {
+                bird : birds[Session.get('current_bird')].name.toUnderscoreFormat()
             }
         });
     }
