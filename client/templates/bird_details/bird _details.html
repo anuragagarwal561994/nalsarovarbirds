@@ -64,31 +64,6 @@
     {{> parasWithPoints}}
 </template>
 
-<template name="paragraphs">
-    {{#each getParagraphs}}
-        <p>{{this}}</p>
-    {{/each}}
-</template>
-
-<template name="lines">
-    {{#each lines}}
-        <div>{{this}}</div>
-    {{/each}}
-</template>
-
-<template name="parasWithPoints">
-    {{#with getParaWithPoints}}
-        {{> paragraphs}}
-        {{#if points}}
-            <ul>
-                {{#each points}}
-                    <li>{{this}}</li>
-                {{/each}}
-            </ul>
-        {{/if}}
-    {{/with}}
-</template>
-
 <template name="BirdsControl">
     <div class="bird-list">
         {{#each images}}

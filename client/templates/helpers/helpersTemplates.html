@@ -1,0 +1,30 @@
+<template name="for">
+    {{#each array}}
+        {{> Template.contentBlock value=this}}
+    {{/each}}
+</template>
+
+<template name="paragraphs">
+    {{#each getParagraphs}}
+        <p>{{this}}</p>
+    {{/each}}
+</template>
+
+<template name="lines">
+    {{#each lines}}
+        <div>{{this}}</div>
+    {{/each}}
+</template>
+
+<template name="parasWithPoints">
+    {{#with getParaWithPoints}}
+        {{> paragraphs}}
+        {{#if points}}
+            <ul>
+                {{#each points}}
+                    <li>{{this}}</li>
+                {{/each}}
+            </ul>
+        {{/if}}
+    {{/with}}
+</template>
