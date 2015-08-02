@@ -22,5 +22,8 @@ Template.ApplicationLayout.events({
     },
     'error img' : function (event, template) {
         template.find(event.target).remove();
+    },
+    'click #controlImageMap area': function (event, template) {
+        Router.go('/'+event.target.getAttribute('alt'));
     }
 });
