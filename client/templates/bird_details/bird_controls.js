@@ -41,6 +41,11 @@ Template.BirdsControl.events({
         Session.set('current_bird', $(template.find(event.currentTarget)).parent().data('slickIndex'))
     }
 });
+Template.BirdControlFooter.helpers({
+    'bird_name' : function () {
+        return birds[Session.get('current_bird')].name.toUnderscoreFormat();
+    }
+});
 Template.BirdControlFooter.events({
     'click #map-trigger' : function (event, template) {
         Router.go('map', {}, {
@@ -48,5 +53,12 @@ Template.BirdControlFooter.events({
                 bird : birds[Session.get('current_bird')].name.toUnderscoreFormat()
             }
         });
+    },
+    'click #sound-trigger' : function (event, template) {
+        var audioElement = template.find('audio');
+        if (audioElement.paused)
+            audioElement.play();
+        else
+            audioElement.pause();
     }
 });
