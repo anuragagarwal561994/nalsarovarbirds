@@ -7,8 +7,8 @@ var navigationLinks = [
     'Population Status'
 ];
 Template.BirdDetails.created = function () {
-    Session.set('current_bird', getIndex(birds, 'name', this.data.bird));
-    Session.set('current_information', getIndex(navigationLinks, this.data.information));
+    Session.set('current_bird', getIndex(birds, 'name', this.data.bird, 'current_bird'));
+    Session.set('current_information', getIndex(navigationLinks, this.data.information), 'current_information');
 };
 Template.BirdDetails.rendered = function () {
     var self = this;

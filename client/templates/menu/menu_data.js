@@ -7,7 +7,7 @@ var link_formation = function (prefix, array, property) {
 };
 menus = {
     'List of Birds' : link_formation('/bird-details?bird=', birds, 'name'),
-    'Family Classification' : link_formation('/family?name=?', bird_families, 'name'),
+    'Family Classification' : link_formation('/family?name=', bird_families, 'name'),
     'List of Indian State Birds' : '/statebird'
 };
 (function reduceMenu(menu, MAX_MENU_ITEMS) {

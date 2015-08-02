@@ -26,16 +26,22 @@ toArray = function (obj) {
 String.prototype.cutString = function (limit) {
     return this.length > limit ? this.slice(0, limit) + '...' : this;
 };
-getIndex = function (a, b, c) {
-    if (arguments.length == 3) {
-        return getIndex(a.map(function (obj) {
-            return obj[b];
-        }), c);
+getIndex = function (a, b, c, d) {
+    switch (arguments.length){
+        case 4:
+            if(!c && Session.get(d))
+                return Session.get(d);
+            else
+                return getIndex(a,b,c);
+        case 3:
+            return getIndex(a.map(function (obj) {
+                return obj[b];
+            }), c);
+        case 2:
+            return Math.max(a.map(function (val) {
+                return val.toUnderscoreFormat();
+            }).indexOf(b), 0);
+        default:
+            throw "Accepts either 2 or 3 arguments";
     }
-    else if (arguments.length == 2) {
-        return Math.max(a.map(function (val) {
-            return val.toUnderscoreFormat();
-        }).indexOf(b), 0);
-    }
-    throw "Accepts either 2 or 3 arguments";
 };

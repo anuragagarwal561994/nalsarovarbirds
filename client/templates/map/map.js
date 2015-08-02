@@ -1,5 +1,5 @@
 Template.Map.created = function () {
-    Session.set('current_bird', getIndex(birds, 'name', this.data.bird));
+    Session.set('current_bird', getIndex(birds, 'name', this.data.bird, 'current_bird'));
 };
 Template.Map.helpers({
     'current_bird' : function () {

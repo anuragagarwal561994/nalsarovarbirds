@@ -1,5 +1,5 @@
 Template.BirdFamily.created = function () {
-    Session.set('current_family', getIndex(bird_families, 'name', this.data.name));
+    Session.set('current_family', getIndex(bird_families, 'name', this.data.name, 'current_family'));
 };
 Template.BirdFamily.helpers({
     'family_data' : function () {
