@@ -45,14 +45,18 @@ bird_families = [
             'These birds often occur in huge numbers',
             'Found mostly on salt lake and lagoons'
         ],
-        bird_details : 'There are five species of flamingos divided into three genera:<br>\
-             <p>Phoenicopterus ruber is divided into two distinct and geographically separated subspecies: P.r. ruber and P.r. roseus. Some scientists classify these as two separate species.</p>\
-             <p>P.r. ruber, the Caribbean flamingo, is slightly smaller than P.r. roseus.</p>\
-             <p>P.r. roseus, the greater flamingo, is the largest of the flamingos and has deep pink wings.</p>\
-             <p>Phoenicopterus chilensis, the Chilean flamingo. Chilean flamingos are slightly smaller than Caribbean flamingos and have gray legs with pink bands at the joints.</p>\
-             <p>Phoenicopterus minor, the lesser flamingo. (Still sometimes listed in the genus Phoeniconaias). This species is the smallest of all flamingos. The color of the lesser flamingo is brighter than the greater flamingo.</p>\
-             <p>Phoenicoparrus jamesi, the James\' flamingo. This species is characterized by having all black flight feathers, including the secondary flight feathers, which are red in other species.</p>\
-             <p>Phoenicoparrus andinus, the Andean flamingo. This is the only species of flamingo that has yellow legs and feet. It also has a red spot between the nostrils.</p>'
+        bird_details : {
+            bird_details_head: 'There are five species of flamingos divided into three genera:',
+            bird_details_body: [
+                'Phoenicopterus ruber is divided into two distinct and geographically separated subspecies: P.r. ruber and P.r. roseus. Some scientists classify these as two separate species.',
+                'P.r. ruber, the Caribbean flamingo, is slightly smaller than P.r. roseus.',
+                'P.r. roseus, the greater flamingo, is the largest of the flamingos and has deep pink wings.',
+                'Phoenicopterus chilensis, the Chilean flamingo. Chilean flamingos are slightly smaller than Caribbean flamingos and have gray legs with pink bands at the joints.',
+                'Phoenicopterus minor, the lesser flamingo. (Still sometimes listed in the genus Phoeniconaias). This species is the smallest of all flamingos. The color of the lesser flamingo is brighter than the greater flamingo.',
+                'Phoenicoparrus jamesi, the James\' flamingo. This species is characterized by having all black flight feathers, including the secondary flight feathers, which are red in other species.',
+                'Phoenicoparrus andinus, the Andean flamingo. This is the only species of flamingo that has yellow legs and feet. It also has a red spot between the nostrils.'
+            ]
+        }
     },
     {
         name : 'Cranes Gruidae',
