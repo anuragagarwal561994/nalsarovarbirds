@@ -1,7 +1,5 @@
 Template.Map.created = function () {
-    Session.set('current_bird', Math.max(_.map(_.pluck(birds, 'name'), function (val) {
-        return val.toUnderscoreFormat();
-    }).indexOf(this.data.bird), 0));
+    Session.set('current_bird', getIndex(birds, 'name', this.data.bird));
 };
 Template.Map.helpers({
     'current_bird' : function () {
