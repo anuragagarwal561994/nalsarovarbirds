@@ -9,6 +9,5 @@ twbs:bootstrap
 jquery
 iron:router
 less
-underscore
 gabrielengel:konecty-magnific-popup
 shcherbin:slickjs

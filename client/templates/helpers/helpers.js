@@ -1,6 +1,8 @@
 Template.for.helpers({
     'array' : function () {
-        return _.range(this.from, this.to, this.incr);
+        var from = this.from,
+            to = this.to;
+        return Array.apply(null, Array(to-from)).map(function (_, i) {return i+from;});
     }
 });
 String.prototype.neededSubStrings = function (joinCharacter) {
