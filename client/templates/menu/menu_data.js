@@ -1,18 +1,13 @@
+var link_formation = function (prefix, array, property) {
+    var links = {};
+    $.each(array, function (index, obj) {
+        links[obj[property]] = prefix + obj[property].toUnderscoreFormat();
+    });
+    return links;
+};
 menus = {
-    'List of Birds' : function () {
-        var birdLink = {};
-        _.each(birds, function (bird) {
-            birdLink[bird.name] = '/bird-details?bird=' + bird.name.toUnderscoreFormat();
-        });
-        return birdLink;
-    }(),
-    'Family Classification' : function () {
-        var familyLink = {};
-        _.each(bird_families, function (family) {
-            familyLink[family.name] = '/family?name=' + family.name.toUnderscoreFormat();
-        });
-        return familyLink;
-    }(),
+    'List of Birds' : link_formation('/bird-details?bird=', birds, 'name'),
+    'Family Classification' : link_formation('/family?name=?', bird_families, 'name'),
     'List of Indian State Birds' : '/statebird'
 };
 (function reduceMenu(menu, MAX_MENU_ITEMS) {
