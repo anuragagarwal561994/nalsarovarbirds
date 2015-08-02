@@ -1,7 +1,7 @@
 bird_families = [
     {
-        name: 'Grebes Podicipedidae',
-        characteristics: [
+        name : 'Grebes Podicipedidae',
+        characteristics : [
             'Aquatic bird',
             'Aquatic bird',
             'Adapted for diving from the surface and swimming under water to catch fish and aquatic invertebrates',
@@ -10,15 +10,15 @@ bird_families = [
             'In flight they have elongated appearance',
             'Feed singly but may form congregation in non-breeding season'
         ],
-        birds: [
+        birds : [
             'Little Grebe',
             'Black Necked Grebe',
             'Great Crested Grebe'
         ]
     },
     {
-        name: 'Whistling ducks, Swans, Geese, and Ducks Anatidae',
-        characteristics: [
+        name : 'Whistling ducks, Swans, Geese, and Ducks Anatidae',
+        characteristics : [
             'Aquatic',
             'Highly gregarious (living in flocks)',
             'Typically migrating, feeding, roosting, and resting together, often mixed flocks',
@@ -29,7 +29,7 @@ bird_families = [
             'Direct flight with sustainable fast wing beats',
             'They fly in V- formation'
         ],
-        birds: [
+        birds : [
             'Bar Headed Goose',
             'Tufted Duck',
             'Greylag Goose',
@@ -38,15 +38,14 @@ bird_families = [
         ]
     },
     {
-        name: 'Flamingos Phoenicopteridae',
-        characteristics: [
+        name : 'Flamingos Phoenicopteridae',
+        characteristics : [
             'Large wading birds, Long necks, Very long legs , Webbed feet , and Pink plumage',
             'The bill is highly specialised for filter- feeding',
             'These birds often occur in huge numbers',
             'Found mostly on salt lake and lagoons'
         ],
-        bird_details:
-            'There are five species of flamingos divided into three genera:<br>\
+        bird_details : 'There are five species of flamingos divided into three genera:<br>\
              <p>Phoenicopterus ruber is divided into two distinct and geographically separated subspecies: P.r. ruber and P.r. roseus. Some scientists classify these as two separate species.</p>\
              <p>P.r. ruber, the Caribbean flamingo, is slightly smaller than P.r. roseus.</p>\
              <p>P.r. roseus, the greater flamingo, is the largest of the flamingos and has deep pink wings.</p>\
@@ -56,8 +55,8 @@ bird_families = [
              <p>Phoenicoparrus andinus, the Andean flamingo. This is the only species of flamingo that has yellow legs and feet. It also has a red spot between the nostrils.</p>'
     },
     {
-        name: 'Cranes Gruidae',
-        characteristics: [
+        name : 'Cranes Gruidae',
+        characteristics : [
             'Stately long necked, long legged bird with tapering bodies, and long inner secondaries which hang over tail.',
             'Flight is powerful, with head and neck extended forward, and legs and feet stretched to behind.',
             'Flock of cranes often fly in V-formation',

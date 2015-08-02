@@ -8,7 +8,7 @@ Template.ApplicationLayout.rendered = function () {
     }
 };
 Template.ApplicationLayout.events({
-    'click #trigger-content': function (event, template) {
+    'click #trigger-content' : function (event, template) {
         var content = $(template.find('#content'));
         var trigger = template.find('#trigger-content');
         var imageName = 'speech-bubble';
@@ -20,7 +20,7 @@ Template.ApplicationLayout.events({
             trigger.src = '/images/controls/' + imageName + '.png';
         }
     },
-    'error img': function (event, template) {
+    'error img' : function (event, template) {
         template.find(event.target).remove();
     }
 });

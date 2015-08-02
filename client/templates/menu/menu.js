@@ -8,14 +8,14 @@ Template.Menu.rendered = function () {
     Tracker.autorun(function () {
         dep.depend();
         var menuItems = self.findAll(".menu-items");
-        var timeGap = 300.0/menuItems.length;
+        var timeGap = 300.0 / menuItems.length;
         $(self.findAll(".menu-items")).each(function (i) {
             $(this).delay(i * timeGap).fadeTo(timeGap, 1);
         });
     })
 };
 Template.Menu.helpers({
-    'menuItems': function () {
+    'menuItems' : function () {
         currentMenu = menus;
         var parentStack = Session.get('parentStack');
         for (var i = 0, length = parentStack.length; i < length; i++) {
@@ -26,12 +26,12 @@ Template.Menu.helpers({
         });
         return Object.keys(currentMenu);
     },
-    'hasParent': function () {
+    'hasParent' : function () {
         return Session.get('parentStack').length;
     }
 });
 Template.Menu.events({
-    'click .menu-items:not(#back-button)': function (event, template) {
+    'click .menu-items:not(#back-button)' : function (event, template) {
         var selected = $(template.find(event.target)).text();
         if (typeof currentMenu[selected] === 'string')
             Router.go(currentMenu[selected]);
@@ -43,7 +43,7 @@ Template.Menu.events({
             });
         }
     },
-    'click #back-button': function (event, template) {
+    'click #back-button' : function (event, template) {
         animateFade(template, true, function () {
             var parentStack = Session.get('parentStack');
             parentStack.pop();
@@ -51,10 +51,9 @@ Template.Menu.events({
         });
     }
 });
-
 var animateFade = function (template, reverse, cb) {
     var menuItems = template.findAll('.menu-items');
-    var timeGap = 300.0/menuItems.length;
+    var timeGap = 300.0 / menuItems.length;
     if (reverse)
         menuItems.reverse();
     $(menuItems).each(function (i) {

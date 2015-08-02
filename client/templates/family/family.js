@@ -1,25 +1,24 @@
 Template.BirdFamily.rendered = function () {
     var familyToJump = this.find('#' + this.data.name);
-    if(this.data.name == "grebes_podicipedidae")
+    if (this.data.name == "grebes_podicipedidae")
         $("#content").animate({
-            scrollTop: 0
+            scrollTop : 0
         }, 'slow');
     else if (familyToJump) {
         $("#content").animate({
-            scrollTop: $(familyToJump).offset().top
+            scrollTop : $(familyToJump).offset().top
         }, 0, function () {
             $("html, body").animate({
-                scrollTop: $(familyToJump).offset().top
+                scrollTop : $(familyToJump).offset().top
             }, 'slow');
         });
-
     }
 };
 Template.BirdFamily.helpers({
-    data: function () {
+    data : function () {
         return _.map(bird_families, function (obj) {
-            obj['id'] = obj.name.toLocaleLowerCase().replace(/ /g, '_').replace(/,/g, '');
-            if(obj.hasOwnProperty('bird_details'))
+            obj['id'] = obj.name.toUnderscoreFormat();
+            if (obj.hasOwnProperty('bird_details'))
                 obj.bird_details = new Handlebars.SafeString(obj.bird_details);
             obj.hasBirdDetails = obj.hasOwnProperty('birds') || obj.hasOwnProperty('bird_details');
             obj.hasFamilyData = obj.hasBirdDetails || obj.hasOwnProperty('characteristics');
@@ -28,10 +27,10 @@ Template.BirdFamily.helpers({
     }
 });
 Template.BirdFamily.events({
-    'click .birds li': function (event, template) {
+    'click .birds li' : function (event, template) {
         Router.go('bird-details', {}, {
-            query: {
-                bird: $(template.find(event.target)).text().toLowerCase().replace(/ /g, '_')
+            query : {
+                bird : $(template.find(event.target)).text().toUnderscoreFormat()
             }
         })
     }

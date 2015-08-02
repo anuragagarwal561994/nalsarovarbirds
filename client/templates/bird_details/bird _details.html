@@ -5,27 +5,100 @@
         {{/each}}
     </div>
     <div id="information">
-        {{#with data}}
-            <h2>{{name}}</h2>
-
-            <h4>{{title}}</h4>
-
-            {{info}}
-        {{/with}}
+        <h2>{{name}}</h2>
+        <h4>{{title}}</h4>
+        {{#if info}}
+            {{> Template.dynamic template=activeInformation data=info}}
+        {{else}}
+            <p>No data is available</p>
+        {{/if}}
     </div>
     {{> contentFor region="footer" template="BirdsControl"}}
     {{> contentFor region="control-footer" template="BirdControlFooter"}}
 </template>
 
+<template name="Nomenclature">
+    <div><b>Latin Name:</b> {{latin_name}}</div>
+    <div><b>Family:</b> {{family}}</div>
+    {{#if local_names}}
+        <div>
+            <b>Local Names:</b>
+            {{#if isStringLocalNames}}
+                {{local_names}}
+            {{else}}
+                {{#each localNames}}
+                    <br>{{key}}: {{value}}
+                {{/each}}
+            {{/if}}
+        </div>
+    {{/if}}
+    <br>
+    <h4>Demography</h4>
+    {{> paragraphs paras=demography}}
+    {{> lines}}
+</template>
+
+<template name="Habitat">
+    {{> paragraphs paras=this}}
+</template>
+
+<template name="Habits">
+    {{#each informationArray}}
+        <div><b>{{key}}</b></div>
+        <div>{{> parasWithPoints value}}</div>
+    {{/each}}
+</template>
+
+<template name="IdentificationFeatures">
+    {{> lines lines=this}}
+    <br>
+    <img src="/images/identification-features-small/{{imageName}}.png" id="magnify"
+         data-zoom-image="/images/identification-features/{{imageName}}.png">
+</template>
+
+<template name="MigrationFacts">
+    {{> parasWithPoints}}
+</template>
+
+<template name="PopulationStatus">
+    {{> parasWithPoints}}
+</template>
+
+<template name="paragraphs">
+    {{#each getParagraphs}}
+        <p>{{this}}</p>
+    {{/each}}
+</template>
+
+<template name="lines">
+    {{#each lines}}
+        <div>{{this}}</div>
+    {{/each}}
+</template>
+
+<template name="parasWithPoints">
+    {{#with getParaWithPoints}}
+        {{> paragraphs}}
+        {{#if points}}
+            <ul>
+                {{#each points}}
+                    <li>{{this}}</li>
+                {{/each}}
+            </ul>
+        {{/if}}
+    {{/with}}
+</template>
+
 <template name="BirdsControl">
     <div class="bird-list">
-        {{#each birds}}
+        {{#each images}}
             <div>
                 <div>
-                    <img src="{{image}}">
+                    <img src="/images/birds-small/{{this}}.jpg">
+
                     <div class="overlay"></div>
                 </div>
-                <span><img src="{{image}}"></span>
+                <span><img src="/images/birds-small/{{this}}.jpg"></span>
             </div>
         {{/each}}
     </div>

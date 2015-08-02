@@ -1,5 +1,5 @@
 Template.StateBird.helpers({
-    data: function () {
+    data : function () {
         return states
     }
 });
