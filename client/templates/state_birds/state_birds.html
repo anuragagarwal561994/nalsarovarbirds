@@ -10,7 +10,13 @@
         {{#each data}}
             <tr>
                 <td>{{name}}</td>
-                <td>{{bird}}</td>
+                <td>
+                    {{#if hasBird}}
+                        <a class="bird-link">{{bird}}</a>
+                    {{else}}
+                        {{bird}}
+                    {{/if}}
+                </td>
             </tr>
         {{/each}}
         </tbody>

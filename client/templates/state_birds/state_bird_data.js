@@ -8,7 +8,7 @@ states = [
     {"name" : "Chhattisgarh", "bird" : "Common hill Myna"},
     {"name" : "Delhi", "bird" : "House Sparrow"},
     {"name" : "Goa", "bird" : "Black-crested Bulbul"},
-    {"name" : "Gujarat", "bird" : "Great Flamingo"},
+    {"name" : "Gujarat", "bird" : "Greater Flamingo"},
     {"name" : "Haryana", "bird" : "Black Francolin"},
     {"name" : "Himachal Pradesh", "bird" : "Western Tragopan"},
     {"name" : "Jammu and Kashmir", "bird" : "Black-necked Crane"},
