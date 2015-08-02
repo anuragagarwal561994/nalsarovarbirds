@@ -56,7 +56,11 @@ bird_families = [
                 'Phoenicoparrus jamesi, the James\' flamingo. This species is characterized by having all black flight feathers, including the secondary flight feathers, which are red in other species.',
                 'Phoenicoparrus andinus, the Andean flamingo. This is the only species of flamingo that has yellow legs and feet. It also has a red spot between the nostrils.'
             ]
-        }
+        },
+        birds : [
+            'Greater Flamingo',
+            'Lesser Flamingo'
+        ]
     },
     {
         name : 'Cranes Gruidae',
@@ -71,6 +75,11 @@ bird_families = [
             'They eat a wide variety of plants and animal food',
             'The bill is used to probe and dig for plant roots and to graze and glean vegetable material above the ground',
             'Both sexes have spectacular and beautiful dance that take place throughout the year'
+        ],
+        birds : [
+            'Common Crane',
+            'Sarus Crane',
+            'Demoiselle Crane'
         ]
     }
 ];

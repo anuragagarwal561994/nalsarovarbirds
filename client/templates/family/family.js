@@ -5,9 +5,6 @@ Template.BirdFamily.helpers({
     'family_data' : function () {
         return bird_families[Session.get('current_family')];
     },
-    'hasBirdDetails' : function () {
-        return this.hasOwnProperty('birds') || this.hasOwnProperty('bird_details');
-    },
     'hasFamilyData' : function () {
         return this.hasOwnProperty('birds') || this.hasOwnProperty('bird_details') || this.hasOwnProperty('characteristics');
     },

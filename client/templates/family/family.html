@@ -10,9 +10,11 @@
                         {{/each}}
                     </ol>
                 {{/if}}
-                {{#if hasBirdDetails}}
-                    <h4>Birds</h4>
-                {{/if}}
+                {{#with bird_details}}
+                    <div>{{bird_details_head}}</div>
+                    {{> paragraphs paras=bird_details_body}}
+                {{/with}}
+                <h4>Birds</h4>
                 {{#if birds}}
                     <ol type="a" class="birds">
                         {{#each birds}}
@@ -20,10 +22,6 @@
                         {{/each}}
                     </ol>
                 {{/if}}
-                {{#with bird_details}}
-                    <div>{{bird_details_head}}</div>
-                    {{> paragraphs paras=bird_details_body}}
-                {{/with}}
             </div>
         {{/if}}
     {{/with}}
