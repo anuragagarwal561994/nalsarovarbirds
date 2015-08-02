@@ -1,0 +1,44 @@
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+  background-color: transparent;
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  > thead {
+    > tr {
+      > th {
+        vertical-align: bottom;
+        border-bottom: 2px solid #ddd;
+      }
+      > th, > td {
+        border-bottom-width: 2px;
+      }
+    }
+    &:first-child > tr:first-child {
+      th, td {
+        border-top: 0;
+      }
+    }
+  }
+  th {
+    text-align: left;
+    padding: 0;
+  }
+
+  > thead, > tbody {
+    > tr {
+      > th, > td {
+        padding: 8px;
+        line-height: 1.42857143;
+        vertical-align: top;
+        border: 1px solid #ddd;
+      }
+    }
+  }
+
+  td {
+    padding: 0;
+  }
+}
