@@ -4,9 +4,13 @@
 # 'meteor add' and 'meteor remove' will edit this file for you,
 # but you can also edit it by hand.
 
-meteor-platform
 jquery
 iron:router
 less
 gabrielengel:konecty-magnific-popup
 shcherbin:slickjs
+templating
+spacebars
+tracker
+ejson
+session
