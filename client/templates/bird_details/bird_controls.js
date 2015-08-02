@@ -38,11 +38,14 @@ Template.BirdsControl.helpers({
 });
 Template.BirdsControl.events({
     'click .bird-list div.slick-slide > div' : function (event, template) {
-        Router.go('bird-details', {}, {
-            query: {
-                bird: birds[$(event.currentTarget).parent().data('slickIndex')].name.toUnderscoreFormat(),
+        var query = {
+            bird : birds[$(event.currentTarget).parent().data('slickIndex')].name.toUnderscoreFormat()
+        };
+        var currentRoute = Router.current().options.route.getName();
+        Router.go(currentRoute, {}, {
+            query : $.extend({}, query, currentRoute == "bird-details" ? {
                 information: navigationLinks[Session.get('current_information')].toUnderscoreFormat()
-            }
+            } : {})
         });
     }
 });
