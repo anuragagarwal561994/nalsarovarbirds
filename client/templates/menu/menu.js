@@ -1,6 +1,5 @@
 var currentMenu = null;
 Template.Menu.created = function () {
-    Session.set('parentStack', []);
     dep = new Tracker.Dependency();
 };
 Template.Menu.rendered = function () {
@@ -39,15 +38,17 @@ Template.Menu.events({
             animateFade(template, false, function () {
                 var parentStack = Session.get('parentStack');
                 parentStack.push(selected);
-                Session.set('parentStack', parentStack);
+                Router.go('menu', {}, {
+                    query: {
+                        parentStack: parentStack
+                    }
+                });
             });
         }
     },
     'click #back-button' : function (event, template) {
         animateFade(template, true, function () {
-            var parentStack = Session.get('parentStack');
-            parentStack.pop();
-            Session.set('parentStack', parentStack);
+            return window.history.back();
         });
     }
 });
