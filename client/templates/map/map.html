@@ -19,8 +19,11 @@
         }
     </style>
     <div id="map">
+        <map id="birdDetailMap" name="birdDetailMap">
+            <area shape="rect" alt="" title="" coords="514,0,673,59" href="javascript:void(0);" target="" />
+        </map>
         <img src="/images/map-images/world-map.png">
-        <img src="/images/map-images/{{current_bird}}.png" id="migration-path">
+        <img src="/images/map-images/{{current_bird}}.png" id="migration-path" usemap="#birdDetailMap">
     </div>
     {{> contentFor region="footer" template="BirdsControl"}}
     {{> contentFor region="control-footer" template=""}}
