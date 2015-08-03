@@ -8,7 +8,6 @@ Template.StateBird.helpers({
         return states
     },
     hasBird : function () {
-        console.log(this.bird, UI._templateInstance().birdNames.indexOf(this.bird));
         return UI._templateInstance().birdNames.indexOf(this.bird) > -1;
     }
 });
