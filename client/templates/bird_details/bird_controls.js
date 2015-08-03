@@ -39,12 +39,12 @@ Template.BirdsControl.helpers({
 Template.BirdsControl.events({
     'click .bird-list div.slick-slide > div' : function (event, template) {
         var query = {
-            bird : birds[$(event.currentTarget).parent().data('slickIndex')].name.toUnderscoreFormat()
+            bird : birds[$(event.currentTarget).parent().data('slickIndex')].name
         };
         var currentRoute = Router.current().options.route.getName();
         Router.go(currentRoute, {}, {
             query : $.extend({}, query, currentRoute == "bird-details" ? {
-                information: navigationLinks[Session.get('current_information')].toUnderscoreFormat()
+                information: navigationLinks[Session.get('current_information')]
             } : {})
         });
     }
@@ -58,7 +58,7 @@ Template.BirdControlFooter.events({
     'click #map-trigger' : function (event, template) {
         Router.go('map', {}, {
             query : {
-                bird : birds[Session.get('current_bird')].name.toUnderscoreFormat()
+                bird : birds[Session.get('current_bird')].name
             }
         });
     },

@@ -80,8 +80,8 @@ Template.BirdDetails.events({
     'click #information-nav .button' : function (event, template) {
         Router.go('bird-details', {}, {
             query: {
-                bird: birds[Session.get('current_bird')].name.toUnderscoreFormat(),
-                information: $(event.currentTarget).text().toUnderscoreFormat()
+                bird: birds[Session.get('current_bird')].name,
+                information: $(event.currentTarget).text()
             }
         });
     },

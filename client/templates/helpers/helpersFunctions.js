@@ -39,7 +39,7 @@ getIndex = function (a, b, c, d) {
             }), c);
         case 2:
             return Math.max(a.map(function (val) {
-                return val.toUnderscoreFormat();
+                return val;
             }).indexOf(b), 0);
         default:
             throw "Accepts either 2 or 3 arguments";

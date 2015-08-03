@@ -1,13 +1,17 @@
-var link_formation = function (prefix, array, property) {
+var link_formation = function (routeName, array, property, queryParamName) {
     var links = {};
     $.each(array, function (index, obj) {
-        links[obj[property]] = prefix + obj[property].toUnderscoreFormat();
+        var query = {};
+        query[queryParamName] = obj[property];
+        links[obj[property]] = Router.path(routeName, {}, {
+            query: query
+        });
     });
     return links;
 };
 menus = {
-    'List of Birds' : link_formation('/bird-details?bird=', birds, 'name'),
-    'Family Classification' : link_formation('/family?name=', bird_families, 'name'),
+    'List of Birds' : link_formation('bird-details', birds, 'name', 'bird'),
+    'Family Classification' : link_formation('family', bird_families, 'name', 'name'),
     'List of Indian State Birds' : '/statebird'
 };
 (function reduceMenu(menu, MAX_MENU_ITEMS) {

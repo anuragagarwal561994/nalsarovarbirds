@@ -15,7 +15,7 @@ Template.StateBird.events({
     'click .bird-link' : function (event, template) {
         Router.go('bird-details', {}, {
             query : {
-                bird : event.target.innerText.toUnderscoreFormat()
+                bird : event.target.innerText
             }
         });
     }

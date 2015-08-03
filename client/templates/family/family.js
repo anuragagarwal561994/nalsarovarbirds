@@ -20,21 +20,21 @@ Template.BirdFamily.events({
     'click .birds li' : function (event, template) {
         Router.go('bird-details', {}, {
             query : {
-                bird : $(template.find(event.target)).text().toUnderscoreFormat()
+                bird : $(template.find(event.target)).text()
             }
         })
     },
     'click #next' : function (event, template) {
         Router.go('family', {}, {
             query : {
-                name : bird_families[Session.get('current_family') + 1].name.toUnderscoreFormat()
+                name : bird_families[Session.get('current_family') + 1].name
             }
         });
     },
     'click #previous' : function (event, template) {
         Router.go('family', {}, {
             query : {
-                name : bird_families[Session.get('current_family') - 1].name.toUnderscoreFormat()
+                name : bird_families[Session.get('current_family') - 1].name
             }
         });
     }
